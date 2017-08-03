@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="main.css" />
+        <title>Title</title>
+    </head>
+    <body>
+        <nav><a href="/">Home</a>
+            <a href="/nowplaying"> Now Playing</a>
+            <a href="/mediumpopular"> Medium Popular </a>
+        </nav>
+        <h1> Popular Movie List</h1>
+        <div class="wrapper">
+            <div class="innerDiv" th:each="movie: ${movies}" >
+                <span><img width="150px" th:src="'http://image.tmdb.org/t/p/original' + ${movie.posterPath} "/></span>
+                <span th:text="${movie.title}" ></span>
+            </div>
+        </div>
+    </body>
+</html>
